@@ -8,7 +8,6 @@ var slice = ArrayProto.slice;
 function Rx(value){
 	if (!(this instanceof Rx)) return new Rx(value);
 	this.listeners = [];
-	this.changed = false;
 	if (value !== undefined) this.set(value);
 }
 
