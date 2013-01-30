@@ -25,9 +25,9 @@ Rx.prototype.get = function(){
 
 Rx.prototype.update = function(){
 	if (!this.action) return this;
-	this.value = this.action.apply(this, this.dependencies.map(function(dep){
+	this.set(this.action.apply(this, this.dependencies.map(function(dep){
 		return dep.get();
-	}).concat([this.value]).concat(slice.call(arguments)));
+	}).concat([this.value]).concat(slice.call(arguments))));
 	return this;
 };
 
